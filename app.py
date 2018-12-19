@@ -78,22 +78,22 @@ class Category(db.Model):
     def __init__(self,name):
         self.name = name
         
-    def insert_datas():
-        java = Category('Java')
-        python =Category('Python')
-        file1 = File('Hello Java',datetime.utcnow(),
-                java,'File Content - Java is cool!')
-        file2 = File('hello python', datetime.utcnow(),python,'File Content - Python is Cool!')
-        db.session.add(java)
-        db.session.add(python)
-        db.session.add(file1)
-        db.session.add(file2)
-        db.session.commit()
-        file1.add_tag('tech')
-        file1.add_tag('java')
-        file2.add_tag('linux')
-        file2.add_tag('tech')
-        file2.add_tag('python')
+def insert_datas():
+    java = Category('Java')
+    python =Category('Python')
+    file1 = File('Hello Java',datetime.utcnow(),
+            java,'File Content - Java is cool!')
+    file2 = File('hello python', datetime.utcnow(),python,'File Content - Python is Cool!')
+    db.session.add(java)
+    db.session.add(python)
+    db.session.add(file1)
+    db.session.add(file2)
+    db.session.commit()
+    file1.add_tag('tech')
+    file1.add_tag('java')
+    file2.add_tag('linux')
+    file2.add_tag('tech')
+    file2.add_tag('python')
 
 @app.route('/')
 def index():
